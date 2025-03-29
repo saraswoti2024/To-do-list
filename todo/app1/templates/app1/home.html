@@ -21,14 +21,16 @@
                 </div>
                 {% for i in datas %}  
                 <ul id="list-container">
-                    
                     <li>
-                        <form action="{% url 'toggle_check' %}">
-                         <input name="checks" type="checkbox" {% if i.checks %}checked{% endif %} onchange="this.form.submit();">
-                        </form>
-                         {{i.textmodel}} <a href="{% url 'edit' i.id %}"><button type="button">edit</button></a>
+                      
+                        <span class="task-text">{{i.textmodel}} </span>
+                        <div class="button-wrapper">
+                        <a href="{% url 'delete' i.id %}"><button type="button">Done</button></a>
+                         <a href="{% url 'edit' i.id %}"><button type="button">Edit</button></a>
+                        </div>
+                        </li>
                 </ul>
-                {% endfor %}
+            {% endfor %}
             </div>
         </div>
     </form>

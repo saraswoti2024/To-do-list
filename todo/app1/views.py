@@ -5,15 +5,12 @@ from django.contrib import messages
 # Create your views here.
 
 def home(request):
-    # datas = None
-    datas = Textstore.objects.all()
+    datas = Textstore.objects.all().order_by('-id')
     if request.method=='POST':
         data= request.POST
-        text = data['texts']
-        check = data.get('checks',False)
-        
+        text = data.get('texts','')
         try:
-            datas = Textstore(textmodel=text,checks=check)
+            datas = Textstore(textmodel=text)
             datas.full_clean()
             datas.save()
             messages.success(request,'saved successfully!')
@@ -28,7 +25,6 @@ def edit(request,id):
     if request.method=='POST':
         data = Textstore.objects.get(id=id)
         data.textmodel = request.POST['texts']
-        data.checks = request.POST.get('checks')=='on'
         try:
             data.full_clean()
             data.save()
@@ -39,5 +35,7 @@ def edit(request,id):
             return redirect('edit')
     return render(request,'app1/edit.html',{'tasks':tasks})
 
-def delete(request):
-    return render(request,'app1/delete.html')
+def delete(request,id):
+    data = Textstore.objects.get(id=id)
+    data.delete()
+    return redirect('home')

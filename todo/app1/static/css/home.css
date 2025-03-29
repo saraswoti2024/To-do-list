@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     /* background-color: blueviolet; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 
 }
 
@@ -61,9 +62,9 @@ input{
 button{
     border-radius: 20px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
     background-color: rgb(255, 127, 168);
-    padding: 16px 40px;    
+    padding: 8px 19px;   
 }
 
 ul li{
@@ -74,12 +75,33 @@ ul li{
     position : relative;
 }
 
-ul li input{
-    margin-right: 20px;
-}
+
 .bt{
     background-color: rgb(125, 65, 167);
     color: white; 
     border-radius: 20px;
     padding: 6px 10px;     
+}
+.task-text {
+    font-weight: bold; /* Makes the text bold */
+    font-size: 18px;   /* Sets the font size to 18px */
+    color: #333;       /* Optionally, set a color for the text */
+    font-family: Arial, sans-serif; /* Set a font family */
+}
+
+#list-container li {
+    display: flex;           /* Use flexbox for the list item */
+    justify-content: space-between; /* Space out the content */
+    align-items: center;     /* Vertically center the content */
+    margin-bottom: 10px;     /* Space between tasks */
+    padding: 5px;
+}
+button:hover {
+    background-color: #d3b7e7; /* Optional: Add hover effect */
+}
+
+/* Wrapper for the buttons */
+.button-wrapper {
+    display: flex;        /* Use flexbox to align buttons horizontally */
+    gap: 5px;            /* Space between buttons */
 }
