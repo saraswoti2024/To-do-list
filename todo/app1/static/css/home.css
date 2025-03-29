@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* background-color: blueviolet; */
+
+}
+
+
+.container{
+   width: 100%;
+   min-height: 100vh;
+   background: linear-gradient(135deg,rgb(159, 117, 199),pink);
+   padding: 20px;
+}
+
+
+.todo-app{
+    border: 3px solid black;
+    width: 100%;
+    max-width: 540px;
+    background: #fdeaff;
+    margin : 100px auto 2px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.todo-app h2{
+    color: #073f99;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: whitesmoke;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+
+button{
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: rgb(255, 127, 168);
+    padding: 16px 40px;    
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    cursor: pointer;
+    position : relative;
+}
+
+ul li input{
+    margin-right: 20px;
+}
+.bt{
+    background-color: rgb(125, 65, 167);
+    color: white; 
+    border-radius: 20px;
+    padding: 6px 10px;     
+}

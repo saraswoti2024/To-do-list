@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO APP</title>
+ 
+    <!-- css internal -->
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <div class="container">
+            <div class="todo-app">
+                <h2>TO-DO List<img src="{% static 'images/title.png' %}" alt=""></h2>
+                <div class="row">
+                    <input type="text" name="texts" id="input-box" placeholder="Add your text">
+                    <button type="submit">Add</button>
+                </div>
+                {% for i in datas %}  
+                <ul id="list-container">
+                    
+                    <li>
+                        <form action="{% url 'toggle_check' %}">
+                         <input name="checks" type="checkbox" {% if i.checks %}checked{% endif %} onchange="this.form.submit();">
+                        </form>
+                         {{i.textmodel}} <a href="{% url 'edit' i.id %}"><button type="button">edit</button></a>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </form>
+</body>
+</html> 
