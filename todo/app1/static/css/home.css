@@ -105,3 +105,13 @@ button:hover {
     display: flex;        /* Use flexbox to align buttons horizontally */
     gap: 5px;            /* Space between buttons */
 }
+
+.topic{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ss{
+    margin-left: 100%;
+    padding-bottom: 10px;
+}

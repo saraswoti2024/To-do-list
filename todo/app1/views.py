@@ -3,9 +3,8 @@ from .models import *
 from django.contrib import messages
 
 # Create your views here.
-
 def home(request):
-    datas = Textstore.objects.all().order_by('-id')
+    datas = Textstore.objects.filter(isdelete=False).order_by('-id')
     if request.method=='POST':
         data= request.POST
         text = data.get('texts','')
@@ -37,5 +36,10 @@ def edit(request,id):
 
 def delete(request,id):
     data = Textstore.objects.get(id=id)
-    data.delete()
+    data.isdelete = True
+    data.save()
     return redirect('home')
+
+def complete(request):
+    data = Textstore.objects.filter(isdelete=True).order_by('-id')
+    return render(request,'app1/complete.html',{'data': data})

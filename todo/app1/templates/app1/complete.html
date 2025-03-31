@@ -5,34 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO APP</title>
- 
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- css internal -->
     <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-    <form action="{% url 'home' %}" method="post">
+    <form action="{% url 'complete' %}" method="post">
         {% csrf_token %}
         <div class="container">
             <div class="todo-app">
+                <i class="fa-solid fa-arrow-right ss"></i>
                 <div class="topic">
                 <h2>TO-DO List<img src="{% static 'images/title.png' %}" alt=""></h2>
                 <a href="{% url 'complete' %}"><button type="button">Completed</button></a>
             </div>
-                <div class="row">
-                    <input type="text" name="texts" id="input-box" placeholder="Add your text">
-                    <button type="submit">Add</button>
-                </div>
-                {% for i in datas %}  
+                {% for i in data  %}
                 <ul id="list-container">
                     <li>
-                        <span class="task-text">{{i.textmodel}} </span>
-                        <div class="button-wrapper">
-                        <a href="{% url 'delete' i.id %}"><button type="button">Done</button></a>
-                         <a href="{% url 'edit' i.id %}"><button type="button">Edit</button></a>
-                        </div>
+                        <span class="task-text">{{i.textmodel}}</span>
                         </li>
-                </ul>
-            {% endfor %}
+                {% endfor %}
+            
             </div>
         </div>
     </form>
