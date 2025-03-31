@@ -14,11 +14,11 @@
     <form action="{% url 'complete' %}" method="post">
         {% csrf_token %}
         <div class="container">
+            
             <div class="todo-app">
-                <i class="fa-solid fa-arrow-right ss"></i>
+               <a href="{% url 'home' %}"><i class="fa-solid fa-arrow-right ss"></i></a>  
                 <div class="topic">
                 <h2>TO-DO List<img src="{% static 'images/title.png' %}" alt=""></h2>
-                <a href="{% url 'complete' %}"><button type="button">Completed</button></a>
             </div>
                 {% for i in data  %}
                 <ul id="list-container">

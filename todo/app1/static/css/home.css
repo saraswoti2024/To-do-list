@@ -23,9 +23,9 @@
     background: #fdeaff;
     margin : 100px auto 2px;
     padding: 40px 30px 70px;
-    border-radius: 10px;
-    border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    padding-top: 15px;
+    /* padding-bottom: 20px; */
+    border-radius: 30px;
 }
 
 .todo-app h2{
@@ -113,5 +113,13 @@ button:hover {
 }
 .ss{
     margin-left: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+}
+.ss:hover{
+    color: #c742a2;
+}
+
+.date-header {
+    margin: 20px 0 10px 0;
+    color: #555;
 }
