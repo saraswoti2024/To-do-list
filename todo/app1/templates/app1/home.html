@@ -39,10 +39,10 @@
                         <span class="task-text">{{i.textmodel}}</span>
                         <div class="button-wrapper">
                         <a href="{% url 'delete' i.id %}"><button type="button">Done</button></a>
+                        <a href="{% url 'deletes' i.id%}?next=home "><button type="button">Delete</button></a>
                             <a href="{% url 'edit' i.id %}"><button type="button">Edit</button></a>
                         </div>
                     </li>
-                    
                 </ul>
             {% endfor %}
             </div>

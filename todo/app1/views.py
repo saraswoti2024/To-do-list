@@ -8,11 +8,12 @@ import time
 # Create your views here.
 def home(request):
     datas = Textstore.objects.filter(isdelete=False).order_by('-id')
-    dates = timezone.now().date()
-    times = timezone.now().time()
+   
     if request.method=='POST':
         data= request.POST
         text = data['texts']
+        dates = timezone.now().date()
+        times = timezone.now().time()
         try:
             datas = Textstore(textmodel=text,date=dates,time=times)
             datas.full_clean()
@@ -53,5 +54,11 @@ def delete(request,id):
     return redirect('home')
 
 def complete(request):
-    data = Textstore.objects.filter(isdelete=True).order_by('-id')
+    data = Textstore.objects.filter(isdelete=True)
     return render(request,'app1/complete.html',{'data': data})
+
+def deletes(request,id):
+    data = Textstore.objects.get(id=id)
+    data.delete()
+    value = request.GET.get('next')
+    return redirect(value)
