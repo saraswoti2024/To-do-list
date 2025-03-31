@@ -1,6 +1,0 @@
-#if need to redirect in one or more page from same view
-<a href=""?next=complete></a>
-<a href=""?next=home></a>
-view.py
-next_page = request.GET.get('next')
-return redirect(next_page)
