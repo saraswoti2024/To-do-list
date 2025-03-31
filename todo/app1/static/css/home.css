@@ -33,6 +33,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
+    cursor: default;
 }
 
 .todo-app h2 img{
@@ -71,8 +72,8 @@ ul li{
     list-style: none;
     font-size: 17px;
     padding: 12px 8px 12px 50px;
-    cursor: pointer;
     position : relative;
+    cursor:default;
 }
 
 
@@ -129,6 +130,7 @@ button:hover {
 .date-header {
     margin: 20px 0 10px 0;
     color: #555;
+    cursor: default;
 }
 
 .bx{
