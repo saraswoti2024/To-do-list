@@ -3,7 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     /* background-color: blueviolet; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+   
 
 }
 
@@ -84,9 +84,17 @@ ul li{
 }
 .task-text {
     font-weight: bold; /* Makes the text bold */
-    font-size: 18px;   /* Sets the font size to 18px */
+    font-size: 15px;   /* Sets the font size to 18px */
     color: #333;       /* Optionally, set a color for the text */
     font-family: Arial, sans-serif; /* Set a font family */
+    width: 150px;
+}
+
+h5{
+    font-size: 12px;
+    /* font-weight: lighter; */
+    font-style: italic;
+    color: #757070;
 }
 
 #list-container li {
@@ -97,9 +105,8 @@ ul li{
     padding: 5px;
 }
 button:hover {
-    background-color: #d3b7e7; /* Optional: Add hover effect */
+    background:radial-gradient(rgb(255, 234, 237),rgb(224, 182, 187));
 }
-
 /* Wrapper for the buttons */
 .button-wrapper {
     display: flex;        /* Use flexbox to align buttons horizontally */
@@ -122,4 +129,15 @@ button:hover {
 .date-header {
     margin: 20px 0 10px 0;
     color: #555;
+}
+
+.bx{
+    background-color: #d3b7e7;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.bx:hover{
+    background:radial-gradient(rgb(255, 234, 237),rgb(224, 182, 187));
 }

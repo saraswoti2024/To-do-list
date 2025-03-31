@@ -21,9 +21,14 @@
                 <h2>TO-DO List<img src="{% static 'images/title.png' %}" alt=""></h2>
             </div>
                 {% for i in data  %}
+                {% ifchanged i.date %} 
+                <h3 class="date-header">{{ i.date|date:"F j, Y" }}</h3>
+            {% endifchanged %}
                 <ul id="list-container">
                     <li>
-                        <span class="task-text">{{i.textmodel}}</span><a href="{% url 'deletes' i.id %}?next=complete"><button type="button">delete</button></a>
+                        <span class="task-text">{{i.textmodel}}</span>
+                        <h5>{{i.time}}</h5>
+                        <!-- <a href="{% url 'deletes' i.id %}?next=complete"><button type="button">delete</button></a> -->
                     </li>
                 {% endfor %}
             </div>

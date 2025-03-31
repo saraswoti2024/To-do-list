@@ -23,7 +23,7 @@
                       
                     {% endif %} -->
                 <h2>TO-DO List<img src="{% static 'images/title.png' %}" alt=""></h2>
-                <a href="{% url 'complete' %}"><button type="button">Completed</button></a>
+                <a href="{% url 'complete' %}"><button type="button" class="bx">Completed</button></a>
             </div>
                 <div class="row">
                     <input type="text" name="texts" id="input-box" placeholder="Add your text">
@@ -37,6 +37,7 @@
                 <ul id="list-container">
                     <li>
                         <span class="task-text">{{i.textmodel}}</span>
+                        <h5>{{i.time}}</h5>
                         <div class="button-wrapper">
                         <a href="{% url 'delete' i.id %}"><button type="button">Done</button></a>
                         <a href="{% url 'deletes' i.id%}?next=home "><button type="button">Delete</button></a>
